@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Generate Tabel</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <div id="table-container"></div>
+    </div>
+    <script type="module">
+        import dataTables from './dataTables.js';
+
+        const data = [
+            { nama: 'Toni', umur: 30 },
+            { nama: 'Han', umur: 25 },
+            { nama: 'Haris', umur: 40 }
+        ];
+        const kolom = ['nama', 'umur'];
+
+        const myTable = new dataTables(data, kolom);
+        document.getElementById('table-container').appendChild(myTable.generateTable());
+    </script>
+</body>
+</html>
